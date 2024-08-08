@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h1>Watchlist</h1>
+    <%= link_to "Ajouter une liste", new_list_path(@bookmark), class: "btn btn-success mt-3" %>
+  </div>
+
+  <h2 class="mb-4">Mes listes:</h2>
+
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= list.name %></h5>
+            <%= link_to "Plus d'informations", list_path(list), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

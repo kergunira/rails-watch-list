@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2 class="mb-2">Gestion de la liste</h2>
+    <div>
+      <%= link_to "Ajouter un Bookmark", new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+      <%= link_to "Supprimer un Bookmark", edit_list_path(@list), class: 'btn btn-danger' %>
+      <%= link_to "Page d'accueil", lists_path(@list), class: 'btn btn-success' %>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mt-2">
+    <div class="card-body">
+      <h3 class="card-title">Films dans la liste</h3>
+      <ul class="list-group list-group-flush">
+        <% @list.movies.each do |movie| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span><%= movie.title %></span>
+            <span class="badge bg-secondary rounded-pill"><%= movie.rating %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
